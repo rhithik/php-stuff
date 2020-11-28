@@ -3,25 +3,24 @@ $error = "";
 $successMessage = "";
 if ($_POST) {
 
-  if (!$_POST["email"]) {
+  if (!isset($_POST["email"]) || empty($_POST["email"])) {
 
     $error .= "An email address is required.<br>";
 
   }
 
-  if (!$_POST["message"]) {
-
+  if (!isset($_POST["message"]) || empty($_POST["message"])) {
     $error .= "The message field is required.<br>";
 
   }
 
-  if (!$_POST["subject"]) {
-
+  if (!isset($_POST["subject"]) || empty($_POST["subject"])) {
     $error .= "The subject is required.<br>";
 
   }
 
-  if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
+
+  if (!isset($_POST["email"]) ||  filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
 
     $error .= "The email address is invalid.<br>";
 
@@ -55,7 +54,7 @@ if ($_POST) {
 <body>
 <div class="container d-flex flex-column">
 	<h1>Get in touch!</h1>
-	<div id="error"><? echo $error ?></div>
+	<div id="error"><?= $error ?></div>
 	<div>
 		<form method="post">
 			<div class="form-group">
