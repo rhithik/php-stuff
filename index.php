@@ -16,7 +16,7 @@ if ($_POST) {
     }
 
     if (!isset($_POST["subject"]) || empty($_POST["subject"])) {
-        $error[] = "The subject is required";
+        $error[] = "The subject is required.";
 
     }
 
@@ -85,7 +85,7 @@ if ($_POST) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
-<!--
+
 <script type="text/javascript">
     $("form").submit(function (e) {
         e.preventDefault();
@@ -109,6 +109,6 @@ if ($_POST) {
         }
     });
 </script>
--->
+
 </body>
 </html>
