@@ -2,6 +2,7 @@
 $error = [];
 $error_list_imploded = '';
 $successMessage = "";
+$error_markup ='';
 if ($_POST) {
 
     if (!isset($_POST["email"]) || empty($_POST["email"])) {
@@ -56,7 +57,7 @@ if ($_POST) {
 <body>
 <div class="container d-flex flex-column">
     <h1>Get in touch!</h1>
-    <div id="error"><?= $error_markup ?></div>
+    <div id="error"><?php $error_markup ?></div>
     <div>
         <form method="post">
             <div class="form-group">
